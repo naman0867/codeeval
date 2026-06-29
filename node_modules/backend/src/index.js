@@ -17,7 +17,10 @@ const app = express()
 const PORT = process.env.PORT || 4000
 
 app.use(helmet())
-app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }))
+app.use(cors({ 
+  origin: ['https://codeeval-web.vercel.app', 'https://codeeval.in', 'https://www.codeeval.in', process.env.FRONTEND_URL],
+  credentials: true 
+}))
 app.use(express.json({ limit: '50kb' }))
 app.use(morgan('combined', { stream: { write: msg => logger.info(msg.trim()) } }))
 
