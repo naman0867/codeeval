@@ -2,6 +2,8 @@
   "name": "frontend",
   "version": "1.0.0",
   "scripts": {
+"prisma:setup": "prisma generate",
+"start": "node src/index.js"
     "dev": "vite",
     "build": "./node_modules/.bin/vite build",
     "preview": "vite preview"
